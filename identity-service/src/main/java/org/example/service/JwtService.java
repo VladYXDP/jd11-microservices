@@ -11,7 +11,7 @@ import java.util.Date;
 @Component
 public class JwtService {
 
-    private final String SECRET = "nM662ygSSPp8SIjRkgbOvvou4SANdpfLrN9IAXd1lM4=\n";
+    private final String SECRET = "nM662ygSSPp8SIjRkgbOvvou4SANdpfLrN9IAXd1lM4=";
 
     public void validateToken(final String token) {
         Jwts.parser().verifyWith(getSigningKey()).build().parseSignedClaims(token);

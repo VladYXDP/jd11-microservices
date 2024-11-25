@@ -15,12 +15,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-<!--    <modules>-->
-<!--        <module>gateway</module>-->
-<!--        <module>eureka-server</module>-->
-<!--        <module>country-service</module>-->
-<!--        <module>recommendation-service</module>-->
-<!--        <module>phone-code-service</module>-->
-<!--        <module>identity-service</module>-->
-<!--    </modules>-->
+    <modules>
+        <module>gateway</module>
+        <module>eureka-server</module>
+        <module>country-service</module>
+        <module>recommendation-service</module>
+        <module>phone-code-service</module>
+        <module>identity-service</module>
+    </modules>
 </project>

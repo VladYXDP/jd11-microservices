@@ -40,5 +40,5 @@ VALUES (2,
         '@el',
         'vie',
         'whatse',
-        'Vary Good!')
+        'Very Good!')
 

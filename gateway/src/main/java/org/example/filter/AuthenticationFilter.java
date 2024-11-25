@@ -1,6 +1,7 @@
 package org.example.filter;
 
 import org.apache.http.HttpHeaders;
+import org.example.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
@@ -9,11 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
-    @Autowired
-    private JwtValidationService jwtValidationService;
+    private JwtUtils jwtUtils;
 
-    public AuthenticationFilter() {
+    @Autowired
+    public AuthenticationFilter(JwtUtils jwtUtils) {
         super(Config.class);
+        this.jwtUtils = jwtUtils;
     }
 
     @Override
@@ -23,7 +25,9 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
                 String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
                 if (authHeader != null && authHeader.startsWith("Barer ")) {
                     authHeader = authHeader.substring(7);
-//                    jwtValidationService.(authHeader);
+                    jwtUtils.validate(authHeader);
+                } else {
+                    throw new RuntimeException("Invalid header auth token");
                 }
             } else {
                 throw new RuntimeException("Missing autherization header ...");
