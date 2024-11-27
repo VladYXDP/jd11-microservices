@@ -40,5 +40,19 @@ VALUES (2,
         '@el',
         'vie',
         'whatse',
-        'Very Good!')
+        'Very Good!');
+
+INSERT INTO recommendations (id, full_name, company, position, phone_code_id, phone_number, email, linked_in, telegram, viber, whats_app, recommendation)
+VALUES (3,
+    'Nikita H',
+    'X5',
+    'HR',
+    4,
+    '3333333',
+    'hr@mail.ru',
+    'linkedin/hr',
+    '@hr',
+    'hr',
+    'whatshr',
+    'hr Good!');
 

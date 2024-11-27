@@ -23,7 +23,7 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
         return ((exchange, chain) -> {
             if (exchange.getRequest().getHeaders().containsKey(HttpHeaders.AUTHORIZATION)) {
                 String authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION).get(0);
-                if (authHeader != null && authHeader.startsWith("Barer ")) {
+                if (authHeader != null && authHeader.startsWith("Bearer ")) {
                     authHeader = authHeader.substring(7);
                     jwtUtils.validate(authHeader);
                 } else {
