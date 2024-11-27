@@ -1,11 +1,15 @@
 package org.example.api.dto;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder(setterPrefix = "with")
-public record PhoneCodeResponseDto(
-        Long id,
-        Integer code,
-        CountryResponseDto country
-) {
+@Getter
+@Setter
+@AllArgsConstructor
+public class PhoneCodeResponseDto {
+
+    private Long id;
+    private Integer code;
+    private CountryResponseDto country;
 }

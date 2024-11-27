@@ -1,19 +1,25 @@
 package org.example.api.dto;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder(setterPrefix = "with")
-public record RecommendationResponseDto(
-        Long id,
-        String fullName,
-        String company,
-        String position,
-        String phoneNumber,
-        String email,
-        String linkedIn,
-        String telegram,
-        String viber,
-        String whatsApp,
-        String recommendations,
-        PhoneCodeResponseDto phoneCodeResponseDto) {
+@Getter
+@Setter
+@AllArgsConstructor
+public class RecommendationResponseDto {
+
+    private Long id;
+    private String fullName;
+    private String company;
+    private String position;
+    private String phoneNumber;
+    private String email;
+    private String linkedIn;
+    private String telegram;
+    private String viber;
+    private String whatsApp;
+    private String recommendations;
+    private PhoneCodeResponseDto phoneCodeResponseDto;
 }
+

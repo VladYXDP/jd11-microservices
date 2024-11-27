@@ -6,4 +6,5 @@ import lombok.Builder;
 public record CountryResponseDto(
         Long id,
         String countryName
-){}
+){
+}

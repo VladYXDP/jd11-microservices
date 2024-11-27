@@ -2,6 +2,7 @@ package org.example.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.example.api.dto.PhoneCodeResponseDto;
 
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class Recommendation {
     private String position;
 
     @Column(name = "phone_code_id")
-    private Long phoneCodeId;
+    private Integer phoneCodeId;
 
     @Column(name = "phone_number", length = 25)
     private String phoneNumber;
