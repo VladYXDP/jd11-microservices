@@ -1,6 +1,6 @@
 package org.example.config;
 
-import org.example.entity.UserCredentinal;
+import org.example.entity.UserCredential;
 import org.example.repository.UserCredentialRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,9 +16,9 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserCredentinal userCredentinal = repository.findByUsername(username);
-        if (userCredentinal != null) {
-            return new CustomUserDetails(userCredentinal);
+        UserCredential userCredential = repository.findByUsername(username);
+        if (userCredential != null) {
+            return new CustomUserDetails(userCredential);
         } else {
             throw new RuntimeException("user not found with username " + username);
         }

@@ -2,7 +2,7 @@ package org.example.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.dto.AuthRequestDto;
-import org.example.entity.UserCredentinal;
+import org.example.entity.UserCredential;
 import org.example.service.AuthService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -18,7 +18,7 @@ public class AuthenticationController {
     private final AuthenticationManager authenticationManager;
 
     @PostMapping
-    public String addNewUser(@RequestBody UserCredentinal user) {
+    public String addNewUser(@RequestBody UserCredential user) {
         return authService.saveUser(user);
     }
 

@@ -1,6 +1,6 @@
 package org.example.config;
 
-import org.example.entity.UserCredentinal;
+import org.example.entity.UserCredential;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,7 +11,7 @@ public class CustomUserDetails implements UserDetails {
     private final String username;
     private final String password;
 
-    public CustomUserDetails(UserCredentinal userCredentinal) {
+    public CustomUserDetails(UserCredential userCredentinal) {
         this.username = userCredentinal.getUsername();
         this.password = userCredentinal.getPassword();
     }

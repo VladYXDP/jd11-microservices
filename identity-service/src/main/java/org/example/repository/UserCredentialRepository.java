@@ -1,9 +1,9 @@
 package org.example.repository;
 
-import org.example.entity.UserCredentinal;
+import org.example.entity.UserCredential;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserCredentialRepository extends JpaRepository<UserCredentinal, Long> {
+public interface UserCredentialRepository extends JpaRepository<UserCredential, Long> {
 
-    UserCredentinal findByUsername(String username);
+    UserCredential findByUsername(String username);
 }
