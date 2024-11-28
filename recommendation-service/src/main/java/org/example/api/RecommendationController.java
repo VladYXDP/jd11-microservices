@@ -1,5 +1,6 @@
 package org.example.api;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.example.api.dto.RecommendationResponseDto;
 import org.example.service.RecommendationService;
